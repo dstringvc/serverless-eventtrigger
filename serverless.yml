@@ -47,7 +47,7 @@ package:
 
 functions:
   storagegatewayrefreshcache:
-    handler: AwsTasks::AwsTasksStorageGateway.Handler::StorageGatewayRefreshCache
+    handler: EventTriggers::EventTrigger.Handler::StorageGatewayRefreshCache
     events: 
       - schedule: 
           name: storagegateway-refreshcache-ssds
