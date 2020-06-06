@@ -52,15 +52,15 @@ functions:
       - schedule: 
           name: storagegateway-refreshcache-ssds
           #description: 'your scheduled rate event description'
-          rate: rate(5 minutes)
-          #cron: cron(0 12 * * ? *)
-          enabled: false
+          #rate: rate(5 minutes)
+          rate: cron(0 20 ? * 7 *)
+          enabled: true
           input: 
             FileShareARN: arn:aws:storagegateway:us-east-1:896456252861:share/share-C2C070A9value1
             FolderList: [/ssds]
             Recursive: true
   listfileshares:
-    handler: AwsTasks::AwsTasksStorageGateway.Handler::ListFileShares
+    handler: EventTriggers::EventTrigger.Handler::ListFileShares
     events:
       - schedule:
           name: storagegateway-listfileshares

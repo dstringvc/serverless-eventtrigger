@@ -20,11 +20,11 @@ namespace EventTrigger
     {
       InitConfig();
 
-      // AmazonStorageGatewayClient client = new AmazonStorageGatewayClient();
-      // client.RefreshCacheAsync(request);
+      AmazonStorageGatewayClient client = new AmazonStorageGatewayClient();
+      RefreshCacheResponse response = await client.RefreshCacheAsync(request);
 
       // Serialize the event object
-      string result = JsonConvert.SerializeObject(request);
+      string result = JsonConvert.SerializeObject(response);
 
       // Send the Slack message
       SlackClient slackClient = new SlackClient(_configuration["SlackWebhookUrl"]);
