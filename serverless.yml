@@ -56,7 +56,7 @@ functions:
           rate: cron(0 20 ? * 7 *)
           enabled: true
           input: 
-            FileShareARN: arn:aws:storagegateway:us-east-1:896456252861:share/share-C2C070A9value1
+            FileShareARN: arn:aws:storagegateway:us-east-1:896456252861:share/share-C2C070A9
             FolderList: [/ssds]
             Recursive: true
   listfileshares:
